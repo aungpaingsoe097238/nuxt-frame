@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
@@ -51,13 +52,16 @@ export default {
       isShow: false,
     }
   },
+  computed: {
+    ...mapGetters(['getBaseUrl'])
+  },
   methods: {
     async submit() {
       this.isBusy = true
       let formData = new FormData(this.$refs.loginForm)
       await this.$axios
         .$post(
-          'https://testing-backend.matesat.org/api/v1/auth/login',
+          this.getBaseUrl('auth/login'),
           formData
         )
         .then((response) => {
@@ -74,4 +78,3 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
