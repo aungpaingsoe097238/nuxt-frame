@@ -24,7 +24,7 @@ export default {
   props: {
     name: {
       type: String,
-      default: 'inputname',
+      default: 'name',
     },
     type: {
       type: String,

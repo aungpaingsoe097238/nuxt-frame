@@ -12,3 +12,9 @@
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';
 @import '~/node_modules/bootswatch/dist/minty/_bootswatch.scss';
 
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}

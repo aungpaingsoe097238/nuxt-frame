@@ -4,6 +4,7 @@
       <b-col lg="6">
         <b-card title="Login Form">
           <b-form @submit.prevent="submit" id="loginForm" ref="loginForm">
+
             <Input
               name="username"
               label="Username:"
@@ -35,6 +36,7 @@
               :disabled="isBusy"
               >Submit <Spinner small v-if="isBusy" />
             </b-button>
+
           </b-form>
         </b-card>
       </b-col>
@@ -65,13 +67,18 @@ export default {
           formData
         )
         .then((response) => {
-          console.log(response)
+          localStorage.setItem('access_token',response.access_token);
+          localStorage.setItem('user',JSON.stringify(response.user));
+          this.$store.commit('addAccessToken',response.access_token);
+          this.$store.commit('addUser',response.user);
+          this.$router.push('/dashboard');
         })
         .catch((error) => {
           this.errors = error.response.data.errors
         })
         .finally(() => {
-          this.isBusy = false
+          this.isBusy = false;
+          this.$refs.loginForm.reset();
         })
     },
   },
