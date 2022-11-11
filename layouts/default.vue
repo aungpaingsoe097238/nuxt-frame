@@ -6,7 +6,7 @@
         <SideBar/>
       </b-col>
       <!-- Content -->
-      <b-col lg="10" class=" bg-info  ">
+      <b-col lg="10" class="" >
         <Nuxt/>
       </b-col>
     </b-row>

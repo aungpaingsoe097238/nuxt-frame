@@ -8,13 +8,49 @@
 //   'primary': #4FF0FF
 // );
 
-@import '~/node_modules/bootswatch/dist/minty/_variables.scss';
+// @import '~/node_modules/bootswatch/dist/minty/_variables.scss';
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';
-@import '~/node_modules/bootswatch/dist/minty/_bootswatch.scss';
+// @import '~/node_modules/bootswatch/dist/minty/_bootswatch.scss';
+@import '~/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import '~/node_modules/animate.css/animate.min.css';
+
+
 
 .sidebar{
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  overflow-y: scroll;
 }
+
+.bi {
+  font-size : 21px;
+  margin-right: 10px;
+}
+
+.nav-link {
+  color : #000;
+}
+
+// Scollbar
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
