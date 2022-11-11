@@ -1,7 +1,7 @@
 <template>
   <li>
     <div class="main-menu" @click="toggleMenu">
-      <NuxtLink class="nav-link" to="#">
+      <a href="#" class="nav-link" >
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
             <i :class="icon"></i>
@@ -9,18 +9,21 @@
           </div>
           <div>
             <i
-              class=" "
-             :class="showSubMenu ? 'bi bi-chevron-right' : 'bi bi-chevron-down'"
-             style="font-size:10px;"></i>
+              :class="
+                showSubMenu ? 'bi bi-chevron-right' : 'bi bi-chevron-down'
+              "
+              style="font-size: 10px"
+            ></i>
           </div>
         </div>
-      </NuxtLink>
+      </a>
     </div>
-    <ul class="sub-menu w-100 list-unstyled " :class="{ 'd-none': showSubMenu }">
+    <ul class="sub-menu w-100 list-unstyled"
+    :class="[{ 'd-none': showSubMenu }, showSubMenu ? '' : 'submenu-animation' ]">
       <li v-for="(menu, index) in menus" :key="index">
         <NuxtLink class="nav-link" :to="menu.uri">
           <div>
-            <i class="bi bi-circle" style="font-size:10px;"></i>
+            <i class="bi bi-circle" style="font-size: 10px"></i>
             <span>{{ menu.title }}</span>
           </div>
         </NuxtLink>
@@ -57,3 +60,4 @@ export default {
   },
 }
 </script>
+

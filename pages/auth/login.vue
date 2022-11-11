@@ -47,6 +47,7 @@
 <script>
 import { mapGetters } from 'vuex';
 export default {
+  layout:'auth',
   data() {
     return {
       errors: {},

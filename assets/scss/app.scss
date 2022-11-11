@@ -4,9 +4,16 @@
   font-family: 'Montserrat', 'Padauk';
 }
 
-// $theme-colors : (
-//   'primary': #4FF0FF
-// );
+$theme-colors : (
+  'primary': #2c3e50,
+  'secondary' : #f8f8f9
+);
+
+:root {
+  --active-color : #f8f8f9;
+}
+
+
 
 // @import '~/node_modules/bootswatch/dist/minty/_variables.scss';
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';
@@ -14,9 +21,7 @@
 @import '~/node_modules/bootstrap-icons/font/bootstrap-icons.css';
 @import '~/node_modules/animate.css/animate.min.css';
 
-
-
-.sidebar{
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -24,13 +29,61 @@
   overflow-y: scroll;
 }
 
+.sidebar-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar-header-icon {
+  height: 25px;
+}
+
 .bi {
-  font-size : 21px;
+  font-size: 21px;
   margin-right: 10px;
 }
 
 .nav-link {
-  color : #000;
+  color: #000;
+}
+
+.nav-link:hover {
+  border-radius: 10px;
+  color: black;
+  transform: translate(5px, 0px);
+  transition: 0.5s;
+}
+
+.nuxt-link-exact-active {
+  background: var(--active-color);
+  border-radius: 10px;
+}
+
+.submenu-animation {
+  animation: rotateX 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes rotateX {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
 }
 
 // Scollbar
@@ -53,4 +106,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
-

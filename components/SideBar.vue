@@ -1,9 +1,15 @@
 <template>
   <div class="">
-    <div class="h5 text-start p-2">Nuxt Frame</div>
+    <div class="sidebar-header">
+      <span class="text-dark font-weight-bold d-flex justify-content-start align-items-center">
+        <img src="favicon.ico" class="sidebar-header-icon mr-2" alt="" />
+        <span>Nuxt Dashboard</span>
+      </span>
 
-    <ul class="w-100 list-unstyled ">
+      <i class="bi bi-list"></i>
+    </div>
 
+    <ul class="w-100 list-unstyled">
       <SideBarMenu icon="bi bi-house" title="Dashboard" uri="/dashboard" />
 
       <div class="dropdown-divider"></div>
@@ -22,7 +28,6 @@
         :menus="permissions"
         class="mt-2"
       />
-
     </ul>
   </div>
 </template>
@@ -38,7 +43,7 @@ export default {
       permissions: [
         { title: 'lists', uri: 'dashboard/permissions/lists' },
         { title: 'create', uri: 'dashboard/permissions/create' },
-      ]
+      ],
     }
   },
 }
