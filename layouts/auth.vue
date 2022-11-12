@@ -6,7 +6,8 @@
 
 <script>
   export default {
-    name: 'auth'
+    name: 'auth',
+    middleware : ['public']
   }
 </script>
 

@@ -17,6 +17,16 @@
 
 <script>
   export default {
-
+    middleware : ['private'],
+    methods: {
+      checkAuth() {
+        if(this.$auth.$storage.getLocalStorage('token') && this.$auth.$storage.getLocalStorage('user')){
+          
+        }
+      }
+    },
+    created () {
+      this.checkAuth();
+    },
   }
 </script>

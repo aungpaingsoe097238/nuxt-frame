@@ -25,7 +25,7 @@
             </b-form-group>
 
             <b-form-checkbox v-model="isShow">
-              {{ isShow ? 'hide' : 'show' }}
+              {{ isShow ? 'hide password' : 'show password' }}
             </b-form-checkbox>
 
             <b-button
@@ -68,8 +68,8 @@ export default {
           formData
         )
         .then((response) => {
-          localStorage.setItem('access_token',response.access_token);
-          localStorage.setItem('user',JSON.stringify(response.user));
+          this.$auth.$storage.setLocalStorage('token', response.access_token);
+          this.$auth.$storage.setLocalStorage('user', JSON.stringify(response.user));
           this.$store.commit('addAccessToken',response.access_token);
           this.$store.commit('addUser',response.user);
           this.$router.push('/dashboard');

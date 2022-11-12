@@ -20,6 +20,10 @@ export default {
     '~assets/scss/app.scss',
   ],
 
+  // router: {
+  //   middleware: 'private'
+  // },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~assets/js/main.js'
@@ -41,7 +45,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
