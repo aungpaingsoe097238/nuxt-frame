@@ -7,7 +7,15 @@
 <script>
   export default {
     name: 'auth',
-    middleware : ['public']
+    middleware : ['public'],
+    methods: {
+      checkAuth() {
+        
+      }
+    },
+    created () {
+      this.checkAuth();
+    },
   }
 </script>
 

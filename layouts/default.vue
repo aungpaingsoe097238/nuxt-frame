@@ -21,7 +21,10 @@
     methods: {
       checkAuth() {
         if(this.$auth.$storage.getLocalStorage('token') && this.$auth.$storage.getLocalStorage('user')){
-          
+          this.$store.commit('addAccessToken',this.$auth.$storage.getLocalStorage('token'));
+          this.$store.commit('addUser',this.$auth.$storage.getLocalStorage('user'));
+        }else{
+          this.$router.push('/auth/login');
         }
       }
     },

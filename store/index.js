@@ -14,9 +14,15 @@ export const mutations = {
   },
   addUser(state,user) {
     state.user = user;
+  },
+  removeAccessToken(state) {
+    state.access_token = null;
+   },
+   removeUser(state) {
+    state.user = {};
   }
 }
 
 export const actions = {
-  
+
 }
