@@ -19,10 +19,10 @@
       </a>
     </div>
     <ul class="sub-menu w-100 list-unstyled"
-    :class="[{ 'd-none': showSubMenu }, showSubMenu ? '' : 'submenu-animation' ]">
+    :class="[{ 'd-none': showSubMenu }, showSubMenu ? '' : 'down-animation' ]">
       <li v-for="(menu, index) in menus" :key="index">
         <NuxtLink class="nav-link" :to="menu.uri">
-          <div>
+          <div class="ml-2">
             <i class="bi bi-circle" style="font-size: 10px"></i>
             <span>{{ menu.title }}</span>
           </div>

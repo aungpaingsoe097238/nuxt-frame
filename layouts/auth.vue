@@ -10,7 +10,9 @@
     middleware : ['public'],
     methods: {
       checkAuth() {
-        
+        if(this.$auth.$storage.getLocalStorage('token') && this.$auth.$storage.getLocalStorage('user')){
+          this.$router.push('/dashboard');
+        }
       }
     },
     created () {

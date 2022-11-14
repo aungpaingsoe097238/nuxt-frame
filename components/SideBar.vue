@@ -6,7 +6,6 @@
         <span>Nuxt Dashboard</span>
       </span>
 
-      <i class="bi bi-list"></i>
     </div>
 
     <ul class="w-100 list-unstyled">

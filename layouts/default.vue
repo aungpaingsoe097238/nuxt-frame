@@ -1,12 +1,10 @@
 <template>
   <b-container fluid>
     <b-row class=" vh-100 justify-content-end">
-      <!-- SideBar -->
-      <b-col lg="2" class="sidebar vh-100 shadow-sm" >
+      <b-col lg="2" class="sidebar vh-100 " >
         <SideBar/>
       </b-col>
-      <!-- Content -->
-      <b-col lg="10" class="bg-secondary shadow-sm" >
+      <b-col lg="10"  class="bg-secondary" >
         <DashboardNavBar>
           <Nuxt/>
         </DashboardNavBar>
@@ -26,7 +24,7 @@
         }else{
           this.$router.push('/auth/login');
         }
-      }
+      },
     },
     created () {
       this.checkAuth();
