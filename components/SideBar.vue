@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       roles: [
-        { title: 'lists', uri: 'dashboard/roles/lists' },
+        { title: 'lists', uri: 'dashboard/roles' },
         { title: 'create', uri: 'dashboard/roles/create' },
       ],
       permissions: [
