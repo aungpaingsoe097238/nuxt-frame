@@ -13,8 +13,6 @@ $theme-colors : (
   --active-color : #f8f8f9;
 }
 
-
-
 // @import '~/node_modules/bootswatch/dist/minty/_variables.scss';
 @import '~/node_modules/bootstrap/scss/bootstrap.scss';
 // @import '~/node_modules/bootswatch/dist/minty/_bootswatch.scss';
@@ -22,28 +20,22 @@ $theme-colors : (
 @import '~/node_modules/animate.css/animate.min.css';
 
 .sidebar {
+  height: 100%;
+  width: 250px;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
-  z-index: 1000;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-.sidebar-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+.content {
+  margin-left: 250px;
+  padding: 0px 10px;
+  height: 100vh;
 }
 
-.sidebar-header-icon {
-  height: 30px;
-}
 
 .bi {
   font-size: 21px;
@@ -64,24 +56,6 @@ $theme-colors : (
 .nuxt-link-exact-active {
   background: var(--active-color);
   border-radius: 10px;
-}
-
-.avator{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid var(--active-color);
-  object-fit: cover;
-}
-
-.drop-down-style {
-  background: white;
-  color: black;
-  border: none;
-}
-
-.dropdown-toggle{
-  padding : 0;
 }
 
 .down-animation {

@@ -5,9 +5,9 @@
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
             <i :class="icon"></i>
-            <span>{{ title }}</span>
+            <span v-if="getSideBarStatus">{{ title }}</span>
           </div>
-          <div>
+          <div v-if="getSideBarStatus">
             <i
               :class="
                 showSubMenu ? 'bi bi-chevron-right' : 'bi bi-chevron-down'
@@ -19,6 +19,7 @@
       </a>
     </div>
     <ul class="sub-menu w-100 list-unstyled"
+    v-if="getSideBarStatus"
     :class="[{ 'd-none': showSubMenu }, showSubMenu ? '' : 'down-animation' ]">
       <li v-for="(menu, index) in menus" :key="index">
         <NuxtLink class="nav-link" :to="menu.uri">
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   props: {
     icon: {
@@ -47,6 +49,13 @@ export default {
       type: Array,
       default: () => [],
     },
+    status: {
+      type: Boolean,
+      default : true,
+    }
+  },
+  computed: {
+    ...mapGetters('utli',['getSideBarStatus'])
   },
   data() {
     return {
